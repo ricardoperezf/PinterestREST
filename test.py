@@ -1,12 +1,4 @@
-from flask import Flask
-
-app = Flask(__name__)
-
-
-@app.route('/')
-def hello_world():
-    return 'Testing!'
-
-
-if __name__ == '__main__':
-    app.run()
+import requests
+files = {'file': open('1.jpg', 'rb')}
+r = requests.post(url, files=files)
+print(r.text)
